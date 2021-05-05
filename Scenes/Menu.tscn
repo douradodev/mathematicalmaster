@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Entidades/Fundo/Fundo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Recursos/HUD/button_pressed.png" type="Texture" id=2]
+[ext_resource path="res://Recursos/HUD/button_normal.png" type="Texture" id=3]
+[ext_resource path="res://Recursos/HUD/button_hover.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/TextureButton.gd" type="Script" id=5]
+
+[node name="Menu" type="Node2D"]
+
+[node name="Fundo" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.53848, -2.2764 )
+
+[node name="HUD2" type="CanvasLayer" parent="."]
+offset = Vector2( 205, 220 )
+transform = Transform2D( 1, 0, 0, 1, 205, 220 )
+
+[node name="btnComecar" type="TextureButton" parent="HUD2"]
+anchor_left = 0.00840897
+anchor_top = -0.00280299
+anchor_right = 0.321409
+anchor_bottom = 0.104197
+margin_left = -5.04538
+margin_top = 1.68179
+margin_right = -145.845
+margin_bottom = -46.5182
+rect_scale = Vector2( 4, 4 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 4 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sair" type="Label" parent="HUD2/btnComecar"]
+margin_right = 96.0
+margin_bottom = 51.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "COMEÇAR 
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="HUD3" type="CanvasLayer" parent="."]
+offset = Vector2( 205, 290 )
+transform = Transform2D( 1, 0, 0, 1, 205, 290 )
+
+[node name="btnSair" type="TextureButton" parent="HUD3"]
+anchor_left = 0.00528315
+anchor_top = -0.00170888
+anchor_right = 0.319283
+anchor_bottom = 0.105291
+margin_left = -3.16989
+margin_top = 1.02533
+margin_right = -144.57
+margin_bottom = -47.1746
+rect_scale = Vector2( 4, 4 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sair" type="Label" parent="HUD3/btnSair"]
+margin_right = 96.0
+margin_bottom = 51.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "SAIR
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+[connection signal="pressed" from="HUD2/btnComecar" to="HUD2/btnComecar" method="_on_btnComecar_pressed"]
+[connection signal="pressed" from="HUD2/btnComecar" to="HUD2/btnComecar" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="HUD3/btnSair" to="HUD2/btnComecar" method="_on_btnSair_pressed"]
+[connection signal="pressed" from="HUD3/btnSair" to="HUD2/btnComecar" method="_on_TextureButton_pressed"]

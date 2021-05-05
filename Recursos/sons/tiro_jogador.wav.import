@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tiro_jogador.wav-e7c73abaec82383a42795a5a5e0129fe.sample"
+
+[deps]
+
+source_file="res://Recursos/sons/tiro_jogador.wav"
+dest_files=[ "res://.import/tiro_jogador.wav-e7c73abaec82383a42795a5a5e0129fe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
