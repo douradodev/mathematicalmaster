@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_btnComecar_pressed():
-	get_tree().change_scene("res://Entidades/dificuldade/Dificuldade.tscn")
+	get_tree().change_scene("res://Scenes/Dificuldade.tscn")
 	pass # Replace with function body.
 
 
