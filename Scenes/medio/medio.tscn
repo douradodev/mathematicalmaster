@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Fundo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Recursos/OP/menos.png" type="Texture" id=2]
+[ext_resource path="res://Recursos/OP/mais.png" type="Texture" id=3]
+[ext_resource path="res://Recursos/HUD/button_hover.png" type="Texture" id=4]
+[ext_resource path="res://Recursos/HUD/button_normal.png" type="Texture" id=5]
+[ext_resource path="res://Recursos/HUD/button_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/medio/OKmedio.gd" type="Script" id=7]
+[ext_resource path="res://Recursos/OP/divisao.png" type="Texture" id=8]
+
+[node name="Fácil" type="Node2D"]
+
+[node name="Fundo" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.537255, 0.537255, 0.537255, 1 )
+show_behind_parent = true
+position = Vector2( 0, 0.749146 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 2.19757
+margin_top = 221.045
+margin_right = 603.198
+margin_bottom = 269.045
+rect_scale = Vector2( 1, 1.5 )
+focus_mode = 1
+text = "Nessa fase você irá utilizar as operações de adição, subtração,
+ multiplicação e divisão e irá passar por desafios
+ que irão utilizar números positivos e
+ negativos com demais problemas."
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menos" type="Sprite" parent="."]
+position = Vector2( 254.81, 71.8921 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="mais" type="Sprite" parent="."]
+position = Vector2( 366.596, 71.9986 )
+rotation = 0.785398
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="mais2" type="Sprite" parent="."]
+position = Vector2( 139.457, 70.8094 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="divisao" type="Sprite" parent="."]
+position = Vector2( 481.949, 73.0813 )
+scale = Vector2( 0.2, 0.255744 )
+texture = ExtResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OKmedio" type="TextureButton" parent="."]
+margin_left = 250.0
+margin_top = 400.0
+margin_right = 297.0
+margin_bottom = 416.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="OKmedio"]
+margin_top = 1.68179
+margin_right = 45.0
+margin_bottom = 15.6818
+text = "OK"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="OKmedio" to="OKmedio" method="_on_OK_pressed"]
+[connection signal="pressed" from="OKmedio" to="OKmedio" method="_on_OKmedio_pressed"]

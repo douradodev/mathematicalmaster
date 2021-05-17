@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Entidades/Fundo/Fundo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Fundo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Recursos/HUD/button_pressed.png" type="Texture" id=2]
 [ext_resource path="res://Recursos/HUD/button_hover.png" type="Texture" id=3]
 [ext_resource path="res://Recursos/HUD/button_normal.png" type="Texture" id=4]
-[ext_resource path="res://Entidades/dificuldade/btnVoltar.gd" type="Script" id=5]
-[ext_resource path="res://Entidades/dificuldade/btnFacil.gd" type="Script" id=6]
+[ext_resource path="res://Entidades/GDs/btnVoltar.gd" type="Script" id=5]
+[ext_resource path="res://Entidades/GDs/btnFacil.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/btnMedio.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/btnDificil.gd" type="Script" id=8]
 
 [node name="Dificuldade" type="Node2D"]
 
@@ -48,6 +50,7 @@ rect_scale = Vector2( 3, 3 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,6 +76,7 @@ rect_scale = Vector2( 3, 3 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -116,4 +120,6 @@ __meta__ = {
 }
 [connection signal="pressed" from="CanvasLayer/btnFacil" to="CanvasLayer/btnFacil" method="_on_btnFacil_pressed"]
 [connection signal="pressed" from="CanvasLayer/btnFacil" to="CanvasLayer/btnVoltar" method="_on_btnFacil_pressed"]
+[connection signal="pressed" from="CanvasLayer/btnMedio" to="CanvasLayer/btnFacil" method="_on_btnMedio_pressed"]
+[connection signal="pressed" from="CanvasLayer/btnDificil" to="CanvasLayer/btnFacil" method="_on_btnDificil_pressed"]
 [connection signal="pressed" from="CanvasLayer/btnVoltar" to="CanvasLayer/btnVoltar" method="_on_btnVoltar_pressed"]
